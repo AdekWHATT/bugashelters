@@ -37,3 +37,9 @@
   .filter-link.active {
     border: 1px solid green;
   }
+  .news-card-content h2 {
+    font-size: 1.5rem;
+  }
+  .news-card-content__date_publick {
+    
+  }

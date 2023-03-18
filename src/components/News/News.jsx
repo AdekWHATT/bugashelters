@@ -37,7 +37,7 @@ const News = () => {
         if (selectedCategory === 'all') {
             setFilteredArticles(articles);
         } else {
-            fetch(`https://newsapi.org/v2/top-headlines?country=ru&category=${selectedCategory}&apiKey=a63ddc24567546db8b9c3141919af3ee`)
+            fetch(`https://newsapi.org/v2/top-headlines/sources=google-news-ru?country=ru&category=${selectedCategory}&apiKey=a63ddc24567546db8b9c3141919af3ee`)
                 .then(response => response.json())
                 .then(data => {
                     setFilteredArticles(data.articles);
@@ -62,22 +62,29 @@ const News = () => {
             </div>
 
             <ul className='news-cards-list'>
-                {filteredArticles.map(article => (
-                    <li key={article.url} className='news-card'>
-                        <div className='news-card-image'>
-                            {article.urlToImage ? (
-                                <img width={400} height={300} src={article.urlToImage} alt={article.title} />
-                            ) : (
-                                <p>Источник: {article.author}</p>
-                            )}
-                        </div>
-                        <div className='news-card-content'>
-                            <h2>{article.title}</h2>
-                            <p>{article.description}</p>
-                            <a href={article.url} target='_blank' rel='noopener noreferrer'>Читать далее...</a>
-                        </div>
-                    </li>
-                ))}
+            {filteredArticles.map(article => {
+    const date = new Date(article.publishedAt); // создаем объект Date из строки с датой
+    const formattedDate = `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}г. в ${date.getHours()}:${date.getMinutes()}`; // форматируем дату в нужный вид
+
+    return (
+        <li key={article.url} className='news-card'>
+            <div className='news-card-image'>
+                {article.urlToImage ? (
+                    <img width={400} height={300} src={article.urlToImage} alt={article.title} />
+                ) : (
+                    <p>Источник: {article.author}</p>
+                )}
+            </div>
+            <div className='news-card-content'>
+                <h2>{article.title}</h2>
+                <p>{article.description}</p>
+                <a href={article.url} target='_blank' rel='noopener noreferrer'>Читать далее...</a>
+                <span className='news-card-content__date_publick'>Дата публикации {formattedDate}</span>
+            </div>
+        </li>
+    );
+})}
+
             </ul>
         </>
     );
