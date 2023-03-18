@@ -42,7 +42,7 @@ const Shelter = () => {
 
     return (
         <YMaps onLoad={(ymaps) => handleYMapsLoad(ymaps)}>
-            <Map width='100%' height='500px' defaultState={defaultState}>
+            <Map width='1100px' height='500px' defaultState={defaultState}>
                 {userCoords && (
                     <Placemark
                         geometry={userCoords}
