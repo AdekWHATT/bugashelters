@@ -12,7 +12,8 @@
     justify-content: center;
 }
 .news-card {
-    box-shadow: 11px 12px 5px rgb(0 0 0 / 10%);
+  background-color: rgba(245, 245, 230, 0.877);
+  border-radius: 10px;
     padding: 20px;
   }
   .filter_container {
@@ -25,14 +26,14 @@
 
   .filter-link {
     padding: 10px;
-    color: #fff;
+    color: rgb(68, 68, 68);
     font-size: 16px;
     font-weight: 600;
-    background-color: rgba(76, 93, 241, 0.774);
+    background-color: rgba(245, 245, 230, 0.877);
     border: none;
     border-radius: 5px;
     cursor: pointer;
   }
   .filter-link.active {
-    text-decoration: underline;
+    border: 1px solid green;
   }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './News.css';
-import Dashboard from '../Dashboard/Dashboard';
 
 const News = () => {
     const [articles, setArticles] = useState([]);
@@ -50,8 +49,7 @@ const News = () => {
     return (
         <>
             <h1 className='p-3'>Новости {categories.name}</h1>
-<Dashboard categories={categories}/>
-            {/* <div className="filter_container">
+            <div className="filter_container">
                 {categories.map(category => (
                     <button
                         key={category.value}
@@ -61,7 +59,7 @@ const News = () => {
                         {category.name}
                     </button>
                 ))}
-            </div> */}
+            </div>
 
             <ul className='news-cards-list'>
                 {filteredArticles.map(article => (
