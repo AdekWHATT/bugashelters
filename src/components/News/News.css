@@ -11,10 +11,14 @@
     align-items: center;
     justify-content: center;
 }
+.news-card-image img {
+  border-radius: 5px;
+}
 .news-card {
   background-color: rgba(245, 245, 230, 0.877);
   border-radius: 10px;
-    padding: 20px;
+    padding: 20px 0 20px 0;
+    min-height: 600px;
   }
   .filter_container {
     display: flex;
@@ -37,9 +41,34 @@
   .filter-link.active {
     border: 1px solid green;
   }
+  .news-card-content {
+    padding: 20px;
+  }
   .news-card-content h2 {
     font-size: 1.5rem;
+    padding: 5px;
   }
+  .news-card-content a {
+    text-decoration: none;
+    color: rgb(77, 77, 77);
+    position: relative;
+  }
+  .news-card-content a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: rgb(77, 77, 77);
+    transition: width 0.2s ease-in-out;
+  }
+  .news-card-content a:hover::after {
+    width: 100%;
+  }
+  
+  
   .news-card-content__date_publick {
-    
+    display: block;
+    text-align: center;
   }

@@ -4,8 +4,11 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'https://newsapi.org',
+      target: 'https://newsdata.io',
       changeOrigin: true,
+      pathRewrite: {
+        '^/api': '/api/1/news'
+      }
     })
   );
 };
