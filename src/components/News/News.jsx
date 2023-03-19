@@ -93,7 +93,7 @@ const News = () => {
                                     <img loading='lazy' width={350} height={280} src={article.image_url} alt={article.title} />
 
                                 ) : (
-                                    <p>Источник: {article.mk}</p>
+                                    <p>Источник: {article.source_id}</p>
                                 )}
                             </div>
                             <div className='news-card-content'>

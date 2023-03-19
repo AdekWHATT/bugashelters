@@ -4,7 +4,9 @@ const MainInfo = () => {
   return (
     <div className='row p-3'>
        <div className='col-6'>
-    444
+    <div className='left_main__banner'>
+      <img src="./img/1583429434.jpg" alt="" width={300} height={250} />
+    </div>
        </div>
        <div className='col-6'>
     555
@@ -13,4 +15,4 @@ const MainInfo = () => {
   )
 }
 
-export default MainInfo
+export default MainInfo;
