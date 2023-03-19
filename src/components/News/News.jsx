@@ -8,9 +8,9 @@ const News = () => {
 
     useEffect(() => {
         const apiUrl = selectedCategory === 'all'
-            ? '/api?apikey=pub_19147085f629826ebf4ddf484d56f57411e6c&language=ru&country=ru'
-            : `/api?apikey=pub_19147085f629826ebf4ddf484d56f57411e6c&language=ru&country=ru&category=${selectedCategory}`;
-
+            ? '/api?apikey=pub_19156eba1ad03c7ccf2e0e6e626d4c8658553&language=ru&country=ru'
+            : `/api?apikey=pub_19156eba1ad03c7ccf2e0e6e626d4c8658553&language=ru&country=ru&category=${selectedCategory}`;
+ 
         const options = {
             headers: {
                 'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ const News = () => {
         if (selectedCategory === 'all') {
             setFilteredArticles(articles);
         } else {
-            const apiUrl = `https://newsdata.io/api/1/news?apikey=pub_19147085f629826ebf4ddf484d56f57411e6c&language=ru&country=ru&category=${selectedCategory}`;
+            const apiUrl = `https://newsdata.io/api/1/news?apikey=pub_19156eba1ad03c7ccf2e0e6e626d4c8658553&language=ru&country=ru&category=${selectedCategory}`;
 
             const options = {
                 headers: {

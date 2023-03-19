@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+
 import './Dashboard.css';
-const Dashboard = (props) => {
-    // console.log(props.categories);
+const Dashboard = ({ onComponentSelection },props) => {
     const item = props.categories
     const [isShrinkView, setIsShrinkView] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
-// console.log(item.value);
     const handleSidebarView = () => {
         setIsShrinkView(!isShrinkView);
     };
@@ -14,6 +13,10 @@ const Dashboard = (props) => {
         setIsDarkMode(!isDarkMode);
         document.body.classList.toggle("dark");
     };
+
+    const handleButtonClick = (componentName) => {
+        onComponentSelection(componentName);
+      };
 
     return (
         <div className={`sidebar-container${isShrinkView ? " shrink" : ""}`}>
@@ -39,6 +42,15 @@ const Dashboard = (props) => {
                     <polyline points="15 18 9 12 15 6" />
                 </svg>
             </button>
+            <div className="sidebar-profileSection">
+                    <img
+                        src="https://assets.codepen.io/3306515/i-know.jpg"
+                        width="40"
+                        height="40"
+                        alt="Monica Geller"
+                    />
+                    <span>Имя Никнейм</span>
+                </div>
             <div className="sidebar-wrapper">
                 <div className="sidebar-themeContainer">
                     <label
@@ -90,7 +102,7 @@ const Dashboard = (props) => {
                 </div>
                 <ul className="sidebar-list">
                     <li className="sidebar-listItem active">
-                        <a>
+                        <a onClick={() => handleButtonClick('News')}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -108,7 +120,7 @@ const Dashboard = (props) => {
                         </a>
                     </li>
                     <li className="sidebar-listItem">
-                        <a>
+                        <a onClick={() => handleButtonClick('Shelter')}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -218,15 +230,7 @@ const Dashboard = (props) => {
                         </a>
                     </li>
                 </ul>
-                <div className="sidebar-profileSection">
-                    <img
-                        src="https://assets.codepen.io/3306515/i-know.jpg"
-                        width="40"
-                        height="40"
-                        alt="Monica Geller"
-                    />
-                    <span>Monica Geller</span>
-                </div>
+               
             </div>
         </div>
     );

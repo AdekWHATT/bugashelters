@@ -41,6 +41,7 @@ const Shelter = () => {
     };
 
     return (
+        <div className='row p-4 rounded-4'>
         <YMaps onLoad={(ymaps) => handleYMapsLoad(ymaps)}>
             <Map width='1100px' height='500px' defaultState={defaultState}>
                 {userCoords && (
@@ -68,6 +69,7 @@ const Shelter = () => {
 
             </Map>
         </YMaps>
+        </div>
     );
 };
 
