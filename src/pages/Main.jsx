@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Shelter from '../components/Shelter/Shelter';
 import News from '../components/News/News';
 import Dashboard from '../components/Dashboard/Dashboard';
-import MainInfo from '../components/Dashboard/MainInfo/MainInfo';
+import MainInfo from '../components/MainInfo/MainInfo';
+import Vk from '../components/VK/Vk';
 const Main = () => {
     const [selectedComponents, setSelectedComponents] = useState([]);
     const handleComponentSelection = (selectedComponent) => {
@@ -19,7 +20,7 @@ const Main = () => {
         });
     };
 
-    
+
     return (
 
         <>
@@ -30,6 +31,8 @@ const Main = () => {
                 {selectedComponents.length === 0 && <MainInfo />}
                 {selectedComponents.includes('News') && <News />}
                 {selectedComponents.includes('Shelter') && <Shelter />}
+                {selectedComponents.includes('Shelter') && <Shelter />}
+                {selectedComponents.includes('Vk') && <Vk />}
             </div>
         </>
     )

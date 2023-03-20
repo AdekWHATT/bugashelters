@@ -8,7 +8,6 @@ const Shelter = () => {
     const [selectedCoords, setSelectedCoords] = useState(null);
     const [ymaps, setYMaps] = useState(null);
 
-
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
             position => {
@@ -49,7 +48,7 @@ const Shelter = () => {
             });
         }
     };
-    
+
     const handleMarkerClick = (coords) => {
         setShelterCoords(coords);
     };
@@ -62,13 +61,13 @@ const Shelter = () => {
 
     return (
         <div className='row p-4 rounded-4'>
-           <YMaps
-    query={{
-        apikey: '45c08cb2-2a71-414c-8791-6734b57701ae',
-        load: 'util.geoQuery,coordSystem.geo,coordSystem.cartesian,map',
-    }}
-    onLoad={(ymaps) => setYMaps(ymaps)}
->
+            <YMaps
+                query={{
+                    apikey: '45c08cb2-2a71-414c-8791-6734b57701ae',
+                    load: 'util.geoQuery,coordSystem.geo,coordSystem.cartesian,map',
+                }}
+                onLoad={(ymaps) => setYMaps(ymaps)}
+            >
                 <Map
                     width='1100px'
                     height='500px'
@@ -80,7 +79,7 @@ const Shelter = () => {
                     }}
                     onLoad={handleYMapsLoad}
                     onClick={() => setShelterCoords(null)}
-                    // instanceRef={mapRef}
+                    
                 >
                     {userCoords && (
                         <Placemark
@@ -91,17 +90,17 @@ const Shelter = () => {
                     )}
                     {shelterCoords && (
                         <Placemark
-                        geometry={shelterCoords}
-                        options={{ preset: 'islands#blueDotIconWithCaption' }}
-                        properties={{
-                            balloonContent:
-                                'Nearest shelter: ' +
-                                bombShelters.find(shelter => shelter.coordinates === shelterCoords).name,
-                            iconCaption: 'Route to shelter',
-                        }}
-                        onClick={() => handleRoute(mapRef, ymaps)}
-                    />
-                    
+                            geometry={shelterCoords}
+                            options={{ preset: 'islands#blueDotIconWithCaption' }}
+                            properties={{
+                                balloonContent:
+                                    'Nearest shelter: ' +
+                                    bombShelters.find(shelter => shelter.coordinates === shelterCoords).name,
+                                iconCaption: 'Route to shelter',
+                            }}
+                            onClick={() => handleRoute(mapRef, ymaps)}
+                        />
+
                     )}
                     {bombShelters.map((shelter, index) => (
                         <Placemark

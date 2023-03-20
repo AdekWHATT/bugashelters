@@ -90,7 +90,7 @@ const News = () => {
                         <li key={article.nextPage} className='news-card'>
                             <div className='news-card-image'>
                                 {article.image_url ? (
-                                    <img loading='lazy' width={350} height={280} src={article.image_url} alt={article.title} />
+                                    <img loading='lazy' width={340} height={280} src={article.image_url} alt={article.title} />
 
                                 ) : (
                                     <p>Источник: {article.source_id}</p>
