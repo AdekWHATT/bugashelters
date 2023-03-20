@@ -44,7 +44,7 @@ const News = () => {
         if (selectedCategory === 'all') {
             setFilteredArticles(articles);
         } else {
-            const apiUrl = `https://newsdata.io/api/1/news?apikey=pub_19156eba1ad03c7ccf2e0e6e626d4c8658553&language=ru&country=ru&category=${selectedCategory}`;
+            const apiUrl = `/api/1/news?apikey=pub_19156eba1ad03c7ccf2e0e6e626d4c8658553&language=ru&country=ru&category=${selectedCategory}`;
 
             const options = {
                 headers: {
@@ -61,7 +61,7 @@ const News = () => {
                 .catch(error => console.error(error));
         }
     };
-
+console.log(articles);
     return (
         <>
             <h1 className='p-3'>Новости {articles.keywords}</h1>
