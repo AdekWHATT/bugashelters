@@ -20,8 +20,6 @@ function Weather() {
       .catch(error => dispatch(fetchWeatherFailure(error)));
     // }
   }, [city, dispatch]);
-
-
   // const handleCityChange = event => {
   //   setCity(event.target.value);
   // };
@@ -39,7 +37,6 @@ function Weather() {
   }
 
   const celsius = (weatherData.main.temp - 273.15).toFixed(1);
-
   return (
     <div className='row p-3'>
       <div className='col-12'>
