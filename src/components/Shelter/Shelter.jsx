@@ -5,7 +5,7 @@ import bombShelters from '../../shelters';
 const Shelter = () => {
     const [userCoords, setUserCoords] = useState(null);
     const [shelterCoords, setShelterCoords] = useState(null);
-    const [selectedCoords, setSelectedCoords] = useState(null);
+    // const [selectedCoords, setSelectedCoords] = useState(null);
     const [ymaps, setYMaps] = useState(null);
 
     useEffect(() => {
