@@ -34,6 +34,7 @@ const Main = () => {
                 {selectedComponents.includes('Shelter') && <Shelter />}
                 {selectedComponents.includes('Vk') && <Vk />}
             </div>
+            
         </>
     )
 }
