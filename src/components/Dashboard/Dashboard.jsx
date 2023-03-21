@@ -101,6 +101,24 @@ const Dashboard = ({ onComponentSelection },props) => {
                     </label>
                 </div>
                 <ul className="sidebar-list">
+                <li className="sidebar-listItem active">
+                        <a onClick={() => handleButtonClick('MainInfo')}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                className="sidebar-listIcon"
+                            >
+                                <rect x="3" y="3" rx="2" ry="2" className="sidebar-listIcon" />
+                                <path d="M3 9h18M9 21V9" />
+                            </svg>
+                            <span className="sidebar-listItemText">Стена</span>
+                        </a>
+                    </li>
                     <li className="sidebar-listItem active">
                         <a onClick={() => handleButtonClick('News')}>
                             <svg
@@ -154,7 +172,7 @@ const Dashboard = ({ onComponentSelection },props) => {
                                 <circle cx="12" cy="12" r="3" />
                                 <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
                             </svg>
-                            <span className="sidebar-listItemText">Список Задач</span>
+                            <span className="sidebar-listItemText">Задачи</span>
                         </a>
                     </li>
                     
@@ -175,7 +193,7 @@ const Dashboard = ({ onComponentSelection },props) => {
                                 <line x1="8" y1="2" x2="8" y2="6" />
                                 <line x1="3" y1="10" x2="21" y2="10" />
                             </svg>
-                            <span className="sidebar-listItemText">ВКонтакте Группа - </span>
+                            <span className="sidebar-listItemText">ВК Плейлисты</span>
                         </a>
                     </li>
                     <li className="sidebar-listItem">

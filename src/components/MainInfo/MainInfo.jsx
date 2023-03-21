@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import { useSelector, useDispatch } from 'react-redux';
 import mainLeftBanner from '../../img/1583429434.jpg';
+import VkGroups from '../VK/VkGroups';
 // import { fetchNews } from '../../store/newsSlice';
 import './MainInfo.css';
 
@@ -39,6 +40,7 @@ const MainInfo = () => {
             Читать в источнике
           </a></>
         } */}
+        <VkGroups/>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Shelter from '../components/Shelter/Shelter';
 import News from '../components/News/News';
 import Dashboard from '../components/Dashboard/Dashboard';
 import MainInfo from '../components/MainInfo/MainInfo';
-import Vk from '../components/VK/Vk';
+import VkPlayList from '../components/VK/VkPlayList';
 import Weather from '../components/Weather/Weather';
 import Todo from '../components/Todo/Todo';
 const Main = () => {
@@ -17,12 +17,12 @@ const Main = () => {
                 <Dashboard onComponentSelection={handleComponentSelection} />
             </div>
             <div className='col-10'>
-                {selectedComponents.length === 0 && <MainInfo />}
+                {selectedComponents.length === 0 || selectedComponents.includes('MainInfo') && <MainInfo />}
                 {selectedComponents.includes('News') && <News />}
                 {selectedComponents.includes('Weather') && <Weather />}
                 {selectedComponents.includes('Todo') && <Todo />}
                 {selectedComponents.includes('Shelter') && <Shelter />}
-                {selectedComponents.includes('Vk') && <Vk />}
+                {selectedComponents.includes('Vk') && <VkPlayList />}
             </div>
             
         </>
