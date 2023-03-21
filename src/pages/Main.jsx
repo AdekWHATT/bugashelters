@@ -4,6 +4,7 @@ import News from '../components/News/News';
 import Dashboard from '../components/Dashboard/Dashboard';
 import MainInfo from '../components/MainInfo/MainInfo';
 import Vk from '../components/VK/Vk';
+import Weather from '../components/Weather/Weather';
 const Main = () => {
     const [selectedComponents, setSelectedComponents] = useState([]);
     const handleComponentSelection = (selectedComponent) => {
@@ -30,7 +31,7 @@ const Main = () => {
             <div className='col-10'>
                 {selectedComponents.length === 0 && <MainInfo />}
                 {selectedComponents.includes('News') && <News />}
-                {selectedComponents.includes('Shelter') && <Shelter />}
+                {selectedComponents.includes('Weather') && <Weather />}
                 {selectedComponents.includes('Shelter') && <Shelter />}
                 {selectedComponents.includes('Vk') && <Vk />}
             </div>
